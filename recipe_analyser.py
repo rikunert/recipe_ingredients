@@ -25,7 +25,8 @@ execfile("C:\Users\Richard\Desktop\python\\recipe_ingredients\ingredient_diction
 # Italian
 # Mediterranean
 # Latin American
-
+# Mexican
+# Asian
 
 #read in recipes of all nations
 # recipe_info = [0]*10
@@ -35,7 +36,7 @@ execfile("C:\Users\Richard\Desktop\python\\recipe_ingredients\ingredient_diction
 #     with open ('cookpad_recipe_info_'+nation+'.pickled', 'rb') as fp:
 #         recipe_info[i] = pickle.load(fp)
 
-with open ('cookpad_recipe_info_Latin_American.pickled', 'rb') as fp:
+with open ('cookpad_recipe_info_Asian.pickled', 'rb') as fp:
          recipe_info = pickle.load(fp)
 #exactly 2000 recipes because cookpad does not list more than 100 pages with each 20 recipes in each category
 
