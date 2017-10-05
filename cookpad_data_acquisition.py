@@ -34,7 +34,7 @@ def recipe_page_parse(address, header_info):
         'sub_grouping' : header_info['sub_grouping'],
         'address' : address,
         'title' : soup('h1')[0].text,
-        'likes' : soup('div', {'class':'recipe-show__metadata'})[0].text,
+        'likes' : soup('div', {'class':'recipe-show__metadata hidden-print'})[0].text,
         'user' : soup('span', {'itemprop':'author'})[0].text,
         'ingredients': [ingredient_with_quantity.replace(ingredient_quantity,'')
                         for ingredient_with_quantity, ingredient_quantity in
