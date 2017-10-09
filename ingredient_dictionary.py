@@ -11,7 +11,9 @@ def ingredient_translator(recipe_info):
                              'pinch of salt', 'onion salt', 'celery salt', 'salt, to taste', 'lbs salt', 'garlic salt',
                              'little salt', 'mediterranean sea salt', 'of salt', 'coarse salt', 'garlic salt to taste',
                              'cracked sea salt', 'salt (or more to taste)', 'salt as per taste', 'salt -',
-                             'salt (to taste)']:
+                             'salt (to taste)', 'salt ,', 'rock salt', 'salt as required', 'salt or to taste',
+                             'salt taste ke according', 'black salt', 'salt to tast', 'salt -  as   needed',
+                             'salt (or to taste)']:
                 recipe_info[c1]['ingredients'][c2] = u'salt'
 
             elif i.lower() in ['salt and pepper', u'salt &amp; pepper', 'large pinch kosher salt &amp; black pepper',
@@ -24,7 +26,7 @@ def ingredient_translator(recipe_info):
                                'salt, pepper, italian seasoning', 'large pinch kosher salt and black pepper',
                                'salt n pepper', 'salt and freshly ground black pepper',
                                'black pepper, and salt  to taste', 'salt pepper and', 'salt - pepper',
-                               'salt and pepper (to taste)', 'of salt and pepper']:
+                               'salt and pepper (to taste)', 'of salt and pepper', 'salt according']:
                 recipe_info[c1]['ingredients'][c2] = u'salt'
                 recipe_info[c1]['ingredients'].extend([u'pepper'])
 
@@ -39,7 +41,8 @@ def ingredient_translator(recipe_info):
                                'coarse ground black pepper', 'fresh black pepper', 'coarse black pepper',
                                'ground pepper', 'as needed black pepper to taste', 'crushed black pepper',
                                'freshly ground pepper', 'black pepper powder', 'black pepper ground', 'pepper powder',
-                               'black peppercorns', 'of pepper']:
+                               'black peppercorns', 'of pepper', 'pepper -', 'whole black peppercorns', 'pepper corns',
+                               'black pepper corns', 'as required pepper powder']:
                 recipe_info[c1]['ingredients'][c2] = u'black pepper'
 
             elif i.lower() in ['crushed red pepper', 'ground red pepper', 'red pepper flakes',
@@ -54,20 +57,31 @@ def ingredient_translator(recipe_info):
 
             elif i.lower() in ['chili', 'red chili powder', 'chile powder', 'red chilli powder', 'red chilly powder',
                                'kashmiri chilli powder', 'fine chili powder', 'dried chili pepper', 'chilli powder',
-                               'red chilli flakes']:
+                               'red chilli flakes', 'chilli', 'hot chili', 'chilly powder', 'chili powder red',
+                               'chilly red      powder', 'kashmiri chili powder', 'chillie powder']:
                 recipe_info[c1]['ingredients'][c2] = u'chili powder'
 
-            elif i.lower() in ['heinz chili sauce', 'peri peri chili sauce', 'chilli sauce', 'sweet chili sauce']:
+            elif i.lower() in ['heinz chili sauce', 'peri peri chili sauce', 'chilli sauce', 'sweet chili sauce',
+                               'thai sweet chili sauce', 'sweet chilli sauce', 'thai chili sauce',
+                               'thai sweet chilli sauce', 'sweet thai chili sauce', 'sweet thai chilli sauce',
+                               'red chilli sauce']:
                 recipe_info[c1]['ingredients'][c2] = u'chili sauce'
 
             elif i.lower() in ['diced green chiles', 'green chilies', 'diced green chilies', 'can diced green chiles',
                                'can green chilies', 'green chiles', 'diced green chilis', 'green chillies',
-                               'green chilli chopped', 'green chillies -', 'green chillies chopped']:
+                               'green chilli chopped', 'green chillies -', 'green chillies chopped', 'green chilly',
+                               'chopped green chillies', 'green chilli (chopped)', 'green chilli (finely chopped)',
+                               'green chilies, chopped', 'chilly green', 'green chili chopped',
+                               'green chillies (chopped)', 'green chillis', 'green chillies slit',
+                               'green chilli finely   chopped', 'green chillie', 'chopped green chilli']:
                 recipe_info[c1]['ingredients'][c2] = u'green chili'
 
             elif i.lower() in ['diced red chiles', 'red chilies', 'diced red chilies', 'can diced red chiles',
                                'can red chilies', 'red chiles', 'diced red chilis', 'red chillies',
-                               'red chilli chopped', 'red chili pepper', 'deseeded red chili pepper']:
+                               'red chilli chopped', 'red chili pepper', 'deseeded red chili pepper', 'red chilli',
+                               'dried red chillies', 'dry red chillies', 'red chili flakes', 'chilli flakes',
+                               'chillies', 'red chilli dry', 'chili flakes', 'chillies dry   red',
+                               'dried chilli flakes', 'dry red chilli']:
                 recipe_info[c1]['ingredients'][c2] = u'red chili'
 
             elif i.lower() in ['garlic, minced', 'minced garlic', 'granulated garlic powder', 'garlic powder',
@@ -82,10 +96,13 @@ def ingredient_translator(recipe_info):
                                'garlic cloves chopped', 'roasted garlic', 'garlic; slivered', 'garlic diced',
                                'garlic (finely chopped)', 'garlic (grated)', 'dice garlic', 'grated garlic',
                                'garlic cloves, chopped', 'pounded garlic', 'garlic finely chopped',
-                               'fine dice garlic and shallot', 'fine dice garlic']:
+                               'fine dice garlic and shallot', 'fine dice garlic', 'of chopped garlic',
+                               'spoon of chopped garlic', 'crispy garlic', 'garlic,crushed', 'garlic , minced',
+                               'garlic grated', 'garlic -']:
                 recipe_info[c1]['ingredients'][c2] = u'garlic'
 
-            elif i.lower() in ['bay leaves', 'crushed bay leaves', 'bayleaf', 'dried bay leaves']:
+            elif i.lower() in ['bay leaves', 'crushed bay leaves', 'bayleaf', 'dried bay leaves', 'bay leaves -',
+                               'bay leaf -']:
                 recipe_info[c1]['ingredients'][c2] = u'bay leaf'
 
             elif i.lower() in ['dried thyme', 'dryed thyme']:
@@ -95,14 +112,19 @@ def ingredient_translator(recipe_info):
                                'chopped ginger', 'fresh grated ginger', 'grind ginger', 'grated fresh ginger',
                                'ginger chopped', 'ginger root', 'ginger (finely chopped)', 'ginger, grated',
                                'fresh ginger, grated', 'fresh minced ginger', 'pounded ginger', 'ginger powder',
-                               'minced fresh ginger', 'thumbs size ginger']:
+                               'minced fresh ginger', 'thumbs size ginger', 'finely chopped ginger', 'ginger (grated)',
+                               'ginger grated', 'crushed ginger', u'&quot; ginger', 'ginger (grated)  slice',
+                               'ginger, chopped', 'ginger, finely chopped', 'ginger, crushed', 'piece of ginger',
+                               'ginger slice']:
                 recipe_info[c1]['ingredients'][c2] = u'ginger'
 
             elif i.lower() in ['ground cinnamon', 'cinnamon stick', 'cinnamon powder', 'cinnamon sticks',
                                'little cinnamon', 'of cinnamon']:
                 recipe_info[c1]['ingredients'][c2] = u'cinnamon'
 
-            elif i.lower() in ['ground cardamom', 'cardamom powder']:
+            elif i.lower() in ['ground cardamom', 'cardamom powder', 'cardamom pods', 'green cardamom pods',
+                               'elaichi powder', 'black cardamom', 'green cardamom powder', 'cardamon powder',
+                               'cardamon pods', 'cardamoms']:
                 recipe_info[c1]['ingredients'][c2] = u'cardamon'
 
             elif i.lower() in ['fresh parsley', 'parsley flakes', 'chopped fresh parsley', 'chopped parsley',
@@ -122,11 +144,16 @@ def ingredient_translator(recipe_info):
                                'coriander sedcilantro', 'bundle cilantro; chiffonade', 'corriander',
                                'cilantro (chopped)', 'cilantro minced', 'coriander leaves', 'fresh coriander',
                                'coriander leaves chopped', 'chopped coriander', 'fresh coriander leaf',
-                               'coriander leaf']:
+                               'coriander leaf', 'chopped fresh coriander', 'fresh coriander leaves',
+                               'coriander leaves, chopped', 'chopped coriander leaves', 'corriander leaves',
+                               'cilantro leaves', 'coriander chopped', 'chopped green coriander', 'handful cilantro',
+                               'green coriander', 'handful fresh coriander leaves']:
                 recipe_info[c1]['ingredients'][c2] = u'cilantro'
 
-            elif i.lower() in ['ground coriander seed', 'ground coriander', 'coriander powder -']:
-                recipe_info[c1]['ingredients'][c2] = u'coriander seed'
+            elif i.lower() in ['ground coriander seed', 'ground coriander', 'coriander powder -', 'corriander powder',
+                               'dhaniya powder', 'coriander seed powder', 'dhania powder', 'corriander seeds',
+                               'ground corriander']:
+                recipe_info[c1]['ingredients'][c2] = u'coriander seeds'
 
             elif i.lower() in ['fresh basil', 'dried basil', 'basil leaves', 'fresh basil leaves',
                                'chopped fresh basil', 'chopped basil', 'fresh basil chopped', 'dry basil',
@@ -134,10 +161,11 @@ def ingredient_translator(recipe_info):
                                'fresh basil; chiffonade', 'chopped fresh basil leaves',
                                'fresh basil leaves, finely chopped', 'basil leaves chopped', 'dried or fresh basil',
                                'basil leaf', 'finely chopped basil', 'fresh basil leaves, chopped', 'basil dried',
-                               'basil leafs', 'each chopped fresh basil, parsley chives', 'fresh basil, chopped']:
+                               'basil leafs', 'each chopped fresh basil, parsley chives', 'fresh basil, chopped',
+                               'sweet basils', 'basils', 'leaves of sweet basil']:
                 recipe_info[c1]['ingredients'][c2] = u'basil'
 
-            elif i.lower() in ['thai basil leaves', 'fresh thai basil']:
+            elif i.lower() in ['thai basil leaves', 'fresh thai basil', 'hot basils', 'fresh thai basil leaves']:
                 recipe_info[c1]['ingredients'][c2] = u'thai basil'
 
             elif i.lower() in ['mexican oregano', 'whole leaf oregano', 'dried oregano', 'ground oregano',
@@ -146,7 +174,8 @@ def ingredient_translator(recipe_info):
                                'mexican oregano [crushed]', 'dried mexican oregano']:
                 recipe_info[c1]['ingredients'][c2] = u'oregano'
 
-            elif i.lower() in ['dried mint', 'mint leaves', 'fresh mint', 'chopped fresh mint', 'mint leaves chopped']:
+            elif i.lower() in ['dried mint', 'mint leaves', 'fresh mint', 'chopped fresh mint', 'mint leaves chopped',
+                               'mints']:
                 recipe_info[c1]['ingredients'][c2] = u'mint'
 
             elif i.lower() in ['fresh dill', 'dill weed', 'dried dill', 'finely chopped dill',
@@ -157,7 +186,8 @@ def ingredient_translator(recipe_info):
                                'chopped fresh thyme', '']:
                 recipe_info[c1]['ingredients'][c2] = u'thyme'
 
-            elif i.lower() in ['ground cumin', 'cumin powder', 'cumin seeds', 'cumin ground', 'cummin', 'cumin seed']:
+            elif i.lower() in ['ground cumin', 'cumin powder', 'cumin seeds', 'cumin ground', 'cummin', 'cumin seed',
+                               'roasted cumin powder', 'cumin seeds (jeera)', 'jeera', 'jeera powder']:
                 recipe_info[c1]['ingredients'][c2] = u'cumin'
 
             elif i.lower() in ['italian seasoning','dried italian seasoning', 'italian spices', 'italian seasonings', 'italian season',
@@ -171,15 +201,35 @@ def ingredient_translator(recipe_info):
             elif i.lower() in ['taco seasoning mix', 'taco season']:
                 recipe_info[c1]['ingredients'][c2] = u'taco seasoning'
 
-            elif i.lower() in ['ground nutmeg']:
+            elif i.lower() in ['ground nutmeg', 'nutmeg powder']:
                 recipe_info[c1]['ingredients'][c2] = u'nutmeg'
 
-            elif i.lower() in ['turmeric powder', 'ground turmeric', 'tumeric', 'tumeric powder', 'turmeric powder -']:
+            elif i.lower() in ['turmeric powder', 'ground turmeric', 'tumeric', 'tumeric powder', 'turmeric powder -',
+                               'ground tumeric', 'turmeric -']:
                 recipe_info[c1]['ingredients'][c2] = u'turmeric'
 
             elif i.lower() in ['curry leaves', 'curry leaves -', 'curry leaves few',
                                'curry leaves or coriander leaves']:
                 recipe_info[c1]['ingredients'][c2] = u'curry leaf'
+
+            elif i.lower() in ['thai curry paste']:
+                recipe_info[c1]['ingredients'][c2] = u'curry paste'
+
+            elif i.lower() in ['thai green curry paste']:
+                recipe_info[c1]['ingredients'][c2] = u'green curry paste'
+
+            elif i.lower() in ['red thai curry paste']:
+                recipe_info[c1]['ingredients'][c2] = u'red curry paste'
+
+            elif i.lower() in ['chicken masala']:
+                recipe_info[c1]['ingredients'][c2] = u'masala'
+
+            elif i.lower() in ['ginger-garlic paste', 'ginger garlic paste -', 'ginger,garlic paste']:
+                recipe_info[c1]['ingredients'][c2] = u'ginger garlic paste'
+
+            elif i.lower() in ['tamarind paste', 'tamarind puree', 'tamarind juice', u'\u2606 tamarind paste',
+                               'tamarind pulp']:
+                recipe_info[c1]['ingredients'][c2] = u'tamarind'
 
             elif i.lower() in ['cayenne', 'cayenne powder', 'ground cayenne pepper']:
                 recipe_info[c1]['ingredients'][c2] = u'cayenne pepper'
@@ -205,29 +255,51 @@ def ingredient_translator(recipe_info):
             elif i.lower() in ['ground cloves', 'whole cloves']:
                 recipe_info[c1]['ingredients'][c2] = u'cloves'
 
-            elif i.lower() in ['vegetable broth', 'stock', 'any stock', 'stock of your choice']:
+            elif i.lower() in ['vegetable broth', 'stock', 'any stock', 'stock of your choice', 'hot chicken stock']:
                 recipe_info[c1]['ingredients'][c2] = u'vegetable stock'
 
             elif i.lower() in ['chicken broth', 'chicken flavor bouillon', 'chicken bouillon', 'chicken bullion',
                                'chicken bouillon cubes', 'water or chicken stock', 'chicken stock powder',
-                               'spoon of chicken stock powder', 'of chicken stock']:
+                               'spoon of chicken stock powder', 'of chicken stock', 'of chicken stock powder']:
                 recipe_info[c1]['ingredients'][c2] = u'chicken stock'
 
             elif i.lower() in ['beef broth', 'beef bouillon cubes']:
                 recipe_info[c1]['ingredients'][c2] = u'beef stock'
 
+            elif i.lower() in ['of pork stock powder']:
+                recipe_info[c1]['ingredients'][c2] = u'pork stock'
+
             elif i.lower() in ['vanilla', 'pure vanilla extract', 'vanilla essence', ]:
                 recipe_info[c1]['ingredients'][c2] = u'vanilla extract'
 
             elif i.lower() in ['of sugar', 'spoon of sugar', 'white sugar', 'granulated sugar', 'caster sugar',
-                               'powdered sugar', 'thumb size rock sugar']:
+                               'powdered sugar', 'thumb size rock sugar', 'sugar -']:
                 recipe_info[c1]['ingredients'][c2] = u'sugar'
 
-            elif i.lower() in ['light brown sugar', 'dark brown sugar']:
+            elif i.lower() in ['light brown sugar', 'dark brown sugar', 'of brown sugar']:
                 recipe_info[c1]['ingredients'][c2] = u'brown sugar'
 
-            elif i.lower() in ['garam masala -']:
+            elif i.lower() in ['garam masala -', 'garam masala powder']:
                 recipe_info[c1]['ingredients'][c2] = u'garam masala'
+
+            elif i.lower() in ['sliced of galangal', 'of galangal', 'galangal,slices', 'as needed galangal / sliced']:
+                recipe_info[c1]['ingredients'][c2] = u'galangal'
+
+            elif i.lower() in ['kasoori methi', 'fenugreek leaves', 'fenugreek', 'dried fenugreek leaves',
+                               'methi kasoori']:
+                recipe_info[c1]['ingredients'][c2] = u'fenugreek powder'
+
+            elif i.lower() in ['black gram', 'urad dal (split black gram)']:
+                recipe_info[c1]['ingredients'][c2] = u'urad dal'
+
+            elif i.lower() in ['suji']:
+                recipe_info[c1]['ingredients'][c2] = u'semolina'
+
+            elif i.lower() in ['mustard seeds -']:
+                recipe_info[c1]['ingredients'][c2] = u'mustard seeds'
+
+            elif i.lower() in ['gulcand']:
+                recipe_info[c1]['ingredients'][c2] = u'gulkand'
 
             # SAUCES
 
@@ -239,12 +311,13 @@ def ingredient_translator(recipe_info):
             elif i.lower() in ['light soy sauce', 'dark soy sauce', 'low sodium soy sauce', 'sweet soy sauce',
                                'tamari soy sauce', 'low-sodium soy sauce', 'soysauce', 'soya sauce',
                                'light soya sauce', 'reduced sodium soy sauce', 'dark soya sauce', 'lite soy sauce',
-                               'lite soya sauce', 'thick soy sauce', '*soy sauce']:
+                               'lite soya sauce', 'thick soy sauce', '*soy sauce', 'of soy sauce']:
                 recipe_info[c1]['ingredients'][c2] = u'soy sauce'
 
             elif i.lower() in ['boiling water', 'cold water', 'warm water', 'water divided', 'water or chicken broth',
                                'water or broth', 'water warm', 'some water', 'water as needed', 'hot water',
-                               'ice water', 'of water', 'water -', 'water or stock', 'bowl of water', 'cool water']:
+                               'ice water', 'of water', 'water -', 'water or stock', 'bowl of water', 'cool water',
+                               'lukewarm water', 'water as required', 'water as per requirement']:
                 recipe_info[c1]['ingredients'][c2] = u'water'
 
             elif i.lower() in ['ice cubes']:
@@ -271,14 +344,23 @@ def ingredient_translator(recipe_info):
             elif i.lower() in ['can enchilada sauce']:
                 recipe_info[c1]['ingredients'][c2] = u'enchilada sauce'
 
-            elif i.lower() in ['sriracha', 'sriracha hot sauce']:
+            elif i.lower() in ['sriracha', 'sriracha hot sauce', 'siracha', 'siracha sauce',
+                               'siracha garlic chile sauce', 'siriacha garlic chili sauce']:
                 recipe_info[c1]['ingredients'][c2] = u'sriracha sauce'
 
-            elif i.lower() in ['quality fish sauce', 'fishsauce', 'spoon of fish sauce', 'of fish sauce']:
+            elif i.lower() in ['quality fish sauce', 'fishsauce', 'spoon of fish sauce', 'of fish sauce',
+                               'thai fish sauce', 'asian fish sauce', u'\u2605 fish sauce',
+                               'thai kitchen premium fish sauce']:
                 recipe_info[c1]['ingredients'][c2] = u'fish sauce'
 
-            elif i.lower() in ['creamy peanut butter']:
+            elif i.lower() in ['creamy peanut butter', 'crunchy peanut butter']:
                 recipe_info[c1]['ingredients'][c2] = u'peanut butter'
+
+            elif i.lower() in ['of oyster sauce', 'spoon of oyster sauce']:
+                recipe_info[c1]['ingredients'][c2] = u'oyster sauce'
+
+            elif i.lower() in ['desi ghee', 'ghee (clarified butter)', u'/4cup ghee', 'pure ghee']:
+                recipe_info[c1]['ingredients'][c2] = u'ghee'
 
             # OILS/FATS
 
@@ -292,7 +374,9 @@ def ingredient_translator(recipe_info):
                                'vegetable oil for frying', 'veg oil', 'frying oil', 'vegetable or olive oil',
                                'sesame or vegetable oil', 'oil for deep frying', 'oil to fry', 'oil -',
                                'cooking oil (shallow frying)', 'oil   for   deep   frying', 'canola oil',
-                               'canola oil for frying', 'oil to deep fry', 'sunflower oil']:
+                               'canola oil for frying', 'oil to deep fry', 'sunflower oil', 'of oil', 'spoon of oil',
+                               'refined oil', 'oil for deep fry', 'oil for shallow frying', 'oil  -',
+                               'oil as required', 'oil - for deep frying']:
                 recipe_info[c1]['ingredients'][c2] = u'cooking oil'
 
             elif i.lower() in ['sesame oil (optional)', 'sesame seed oil', 'toasted sesame oil', 'dark sesame oil']:
@@ -303,23 +387,32 @@ def ingredient_translator(recipe_info):
 
             elif i.lower() in ['unsalted butter', 'melted butter', 'butter, melted', 'butter (melted)',
                                'butter; melted', 'butter or margarine', 'butter, softened', 'butter melted',
-                               'of butter', 'softened butter', 'butter- softened', 'salted butter']:
+                               'of butter', 'softened butter', 'butter- softened', 'salted butter',
+                               'softened sunflower spread/butter', 'ghee or butter']:
                 recipe_info[c1]['ingredients'][c2] = u'butter'
 
             # CARBS
 
             elif i.lower() in ['all purpose flour', 'all-purpose flour', 'plain flour', 'sr flour', 'bread flour',
-                               'ap flour', 'wheat flour', 'cake flour', 'whole wheat flour']:
+                               'ap flour', 'wheat flour', 'cake flour', 'whole wheat flour', 'white flour',
+                               'bowl wheat flour']:
                 recipe_info[c1]['ingredients'][c2] = u'flour'
+
+            elif i.lower() in ['besan', 'gram flour (besan)', 'besan (gram flour)']:
+                recipe_info[c1]['ingredients'][c2] = u'gram flour'
 
             elif i.lower() in ['cooked rice', 'long grain rice', 'white rice', 'cooked white rice',
                                'long grain white rice', 'uncooked rice', 'instant rice', 'medium grain rice',
-                               'minute rice', 'rice cooked', 'steamed rice']:
+                               'minute rice', 'rice cooked', 'steamed rice', 'ground roasted rice', 'boiled rice']:
                 recipe_info[c1]['ingredients'][c2] = u'rice'
+
+            elif i.lower() in ['cooked jasmine rice']:
+                recipe_info[c1]['ingredients'][c2] = u'jasmine rice'
 
             elif i.lower() in ['potatoes', 'large potatoes', 'potatos', 'russet potatoes', 'baby potatoes',
                                'potatoes (cubed)', 'small peeled potatoes', 'potatoes, cubed', 'diced potatoes',
-                               'mashed potatoes', 'large russet potatoes', 'boiled potatoes']:
+                               'mashed potatoes', 'large russet potatoes', 'boiled potatoes', 'boil potato',
+                               'boiled potato', 'potatoes']:
                 recipe_info[c1]['ingredients'][c2] = u'potato'
 
             elif i.lower() in ['sweet potatoes']:
@@ -331,7 +424,8 @@ def ingredient_translator(recipe_info):
                                'italian style breadcrumbs']:
                 recipe_info[c1]['ingredients'][c2] = u'bread crumbs'
 
-            elif i.lower() in ['french bread', 'italian bread', 'ciabatta bread', 'white bread', 'pita bread']:
+            elif i.lower() in ['french bread', 'italian bread', 'ciabatta bread', 'white bread', 'pita bread',
+                               'bread slices']:
                 recipe_info[c1]['ingredients'][c2] = u'bread'
 
             elif i.lower() in ['flour tortillas', 'corn tortillas', 'white corn tortillas', 'large flour tortillas',
@@ -363,11 +457,18 @@ def ingredient_translator(recipe_info):
                 recipe_info[c1]['ingredients'][c2] = u'oats'
 
             elif i.lower() in ['sliced almonds', 'blanched almonds', 'raw almonds', 'slivered almonds',
-                               'toasted almonds']:
+                               'toasted almonds', 'ground almonds', 'almonds chopped', '.almonds for garnish',
+                               'ground almond', 'almonds sliced']:
                 recipe_info[c1]['ingredients'][c2] = u'almonds'
 
             elif i.lower() in ['sesame', 'toasted sesame seeds', 'roasted sesame seeds', 'white sesame seeds']:
                 recipe_info[c1]['ingredients'][c2] = u'sesame seeds'
+
+            elif i.lower() in ['roasted peanuts', 'chopped peanuts', 'crushed peanuts']:
+                recipe_info[c1]['ingredients'][c2] = u'peanuts'
+
+            elif i.lower() in ['kaju', 'cashew nuts', 'cashews chopped', 'cashew', 'cashewnuts']:
+                recipe_info[c1]['ingredients'][c2] = u'cashews'
 
             # VEG
 
@@ -382,13 +483,15 @@ def ingredient_translator(recipe_info):
                                'onion, finely chopped', 'onion ,peeled and very finely diced', 'onions, chopped',
                                'onion (diced)', 'onion finely chopped', 'large onions', 'sliced onion',
                                'medium onions', 'graded onion', 'medium onion, diced', 'onions chopped',
-                               'onion, thinly sliced', 'onions sliced', 'dice onion']:
+                               'onion, thinly sliced', 'onions sliced', 'dice onion', 'onion slices', 'onion,sliced',
+                               'finely chopped onions', 'big onion', 'fried onions', 'onion -', 'onions small',
+                               'onions, finely chopped', 'onions finely chopped', 'grated onion']:
                 recipe_info[c1]['ingredients'][c2] = u'onion'
 
             elif i.lower() in ['green onions, chopped', 'green onions', 'green onions, sliced', 'chopped green onion',
                                'green onions chopped', 'sliced green onions', 'chopped green onions',
                                'minced green onion', 'green onion (chopped)', 'green onion, chopped',
-                               'green onion, sliced']:
+                               'green onion, sliced', 'green onions sliced']:
                 recipe_info[c1]['ingredients'][c2] = u'green onion'
 
             elif i.lower() in ['yellow onion, chopped', 'chopped yellow onion', 'yellow onion; minced',
@@ -406,23 +509,24 @@ def ingredient_translator(recipe_info):
                 recipe_info[c1]['ingredients'][c2] = u'white onion'
 
             elif i.lower() in ['spring onions', 'spring onion or scallion', 'spring onion, chopped',
-                               'dice spring onion', 'spring onion,chopped']:
+                               'dice spring onion', 'spring onion,chopped', 'spring onions finely chopped']:
                 recipe_info[c1]['ingredients'][c2] = u'spring onion'
 
-            elif i.lower() in ['shallots', 'small shallots', 'pounded shallot']:
+            elif i.lower() in ['shallots', 'small shallots', 'pounded shallot', 'sliced shallot']:
                 recipe_info[c1]['ingredients'][c2] = u'shallot'
 
             elif i.lower() in [u'scallions', 'chopped scallion', 'scallion, chopped', 'chopped scallions']:
                 recipe_info[c1]['ingredients'][c2] = u'scallion'
 
             elif i.lower() in ['chopped chives', 'dried chives', 'finely chopped chives', 'chives/green onions',
-                               'chopped asian chives', 'chives', 'fresh chives']:
+                               'chopped asian chives', 'chives', 'fresh chives', 'fresh chives [minced]']:
                 recipe_info[c1]['ingredients'][c2] = u'chives'
 
             elif i.lower() in ['carrots', 'baby carrots', 'large carrots', 'chopped carrots', 'carrots diced',
                                'carrots, chopped', 'shredded carrots', 'medium carrots', 'carrots chopped',
                                'carrots, sliced', 'grated carrot', 'shredded carrot', 'carrots, shredded',
-                               'small carrot', 'frozen peas and carrots', 'grated carrots']:
+                               'small carrot', 'frozen peas and carrots', 'grated carrots', 'chopped carrot',
+                               'carrot (grated)', 'carrot chopped']:
                 recipe_info[c1]['ingredients'][c2] = u'carrot'
 
             elif i.lower() in ['diced tomatoes', 'large tomatoes', 'chopped tomatoes', 'cherry tomatoes', 'tomatoes',
@@ -433,7 +537,9 @@ def ingredient_translator(recipe_info):
                                'plum tomatoes', u'chopped tomato', 'roma tomato', 'tomatos', 'tomato chopped',
                                'diced tomato', 'tomatoes diced', 'tomato, diced', 'tomatoes, diced',
                                'diced tomatoes, undrained', 'diced tomatoe', 'fire roasted diced tomatoes',
-                               'can diced tomatoes', 'roma tomatoes, chopped', 'tomato (chopped)', 'cherry tomato']:
+                               'can diced tomatoes', 'roma tomatoes, chopped', 'tomato (chopped)', 'cherry tomato',
+                               'tomato sliced', 'canned tomatoes', 'tomatoes, chopped', 'tomatoes (chopped)',
+                               'big tomato']:
                 recipe_info[c1]['ingredients'][c2] = u'tomato'
 
             elif i.lower() in ['can of tomato sauce', 'can tomato sauce', 'tomatoe sauce', 'heinz tomato sauce',
@@ -459,6 +565,9 @@ def ingredient_translator(recipe_info):
                                'fresh broccoli', 'broccoli, bite size', 'brocoli']:
                 recipe_info[c1]['ingredients'][c2] = u'broccoli'
 
+            elif i.lower() in ['cauliflower florets']:
+                recipe_info[c1]['ingredients'][c2] = u'cauliflower'
+
             elif i.lower() in ['green pepper', 'chopped green bell pepper', 'green bell pepper, diced',
                                'green bell peppers', 'green bell pepper, chopped', 'green pepper, chopped',
                                'green pepper, diced', 'green peppers', 'chopped green pepper', 'green pepper chopped',
@@ -473,27 +582,28 @@ def ingredient_translator(recipe_info):
                 recipe_info[c1]['ingredients'][c2] = u'red bell pepper'
 
             elif i.lower() in ['bell peppers', 'bell pepper, chopped', 'bell pepper, diced', 'bell pepper chopped',
-                               'peppers', 'chopped bell pepper', 'small bell pepper, diced']:
+                               'peppers', 'chopped bell pepper', 'small bell pepper, diced', 'capsicum']:
                 recipe_info[c1]['ingredients'][c2] = u'bell pepper'
 
             elif i.lower() in ['fresh lemon juice', 'juice of 1 lemon', 'lemon extract',
                                'lemon juice from whole lemon',
                                'juice of one lemon', 'lemon, juiced', 'reallemon juice',
                                'freshly squeezed lemon juice', 'juice of lemon', 'lemon juiced', 'juice of 2 lemons',
-                               'lemons, juiced', 'juice of half a lemon']:
+                               'lemons, juiced', 'juice of half a lemon', 'lime or lemon juice']:
                 recipe_info[c1]['ingredients'][c2] = u'lemon juice'
 
             elif i.lower() in ['fresh lime juice', 'juice of 1 lime', 'lime extract',
                                'lime juice from whole lime', 'juice of one lime', 'lime, juiced',
                                'freshly squeezed lime juice', 'juice of lime', 'lime juiced', 'juice of 2 limes',
                                'limes, juiced', 'juice of half a lime', 'limes juiced', 'lime; juiced',
-                               'lime juiced', 'freshly squeezed lime juice', 'limes (juiced)']:
+                               'lime juiced', 'freshly squeezed lime juice', 'limes (juiced)', 'lemon or lime juice',
+                               'juice of  lime']:
                 recipe_info[c1]['ingredients'][c2] = u'lime juice'
 
-            elif i.lower() in ['limes', 'lime zest', 'lime wedges', 'fresh lime']:
+            elif i.lower() in ['limes', 'lime zest', 'lime wedges', 'fresh lime', 'fresh lime wedges']:
                 recipe_info[c1]['ingredients'][c2] = u'lime'
 
-            elif i.lower() in ['lemon wegdes', 'lemons']:
+            elif i.lower() in ['lemon wegdes', 'lemons', 'lemon wedges']:
                 recipe_info[c1]['ingredients'][c2] = u'lemon'
 
             elif i.lower() in ['ripe banana', 'bananas', 'frozen banana', 'ripe bananas']:
@@ -561,17 +671,28 @@ def ingredient_translator(recipe_info):
                 recipe_info[c1]['ingredients'][c2] = u'refried beans'
 
             elif i.lower() in [u'bean sprouts', 'fresh bean sprouts', 'bean sprouts (optional)',
-                               'bean sprouts drained', 'fresh bean sprouts [left whole]', 'beans sprout']:
+                               'bean sprouts drained', 'fresh bean sprouts [left whole]', 'beans sprout',
+                               'mung bean sprouts']:
                 recipe_info[c1]['ingredients'][c2] = u'bean sprout'
 
-            elif i.lower() in [u'coconut grated', 'grated coconut']:
+            elif i.lower() in [u'coconut grated', 'grated coconut', 'fresh grated coconut', 'dessicated coconut']:
                 recipe_info[c1]['ingredients'][c2] = u'coconut'
+
+            elif i.lower() in [u'light coconut milk', 'of coconut milk', 'can coconut milk', 'tin coconut milk']:
+                recipe_info[c1]['ingredients'][c2] = u'coconut milk'
 
             elif i.lower() in [u'frozen peas', 'green peas', 'frozen green peas']:
                 recipe_info[c1]['ingredients'][c2] = u'peas'
 
             elif i.lower() in [u'bak choy', 'bok choy', 'baby bok choy', 'bak choy stem', 'fresh bok choy']:
                 recipe_info[c1]['ingredients'][c2] = u'pak choi'
+
+            elif i.lower() in [u'minced lemongrass', 'of lemongrass', 'lemongrass stalk', 'chopped lemongrass',
+                               'lemongrass stalks']:
+                recipe_info[c1]['ingredients'][c2] = u'lemongrass'
+
+            elif i.lower() in [u'water chestnuts [chopped]']:
+                recipe_info[c1]['ingredients'][c2] = u'chestnuts'
 
             #FRUIT
 
@@ -583,6 +704,16 @@ def ingredient_translator(recipe_info):
 
             elif i.lower() in ['frozen pineapple', 'pineapple chunks']:
                 recipe_info[c1]['ingredients'][c2] = u'pineapple'
+
+            elif i.lower() in ['chopped dryfruits', 'dry fruits']:
+                recipe_info[c1]['ingredients'][c2] = u'dry fruits'
+
+            elif i.lower() in ['dry mango powder', 'dried mango powder', 'amchur', 'amchur powder',
+                               'amchur powder (dried mango powder)']:
+                recipe_info[c1]['ingredients'][c2] = u'mango powder'
+
+            elif i.lower() in ['kishmish', 'golden raisins', 'raisins (optional)']:
+                recipe_info[c1]['ingredients'][c2] = u'raisins'
 
             # PROTEIN
 
@@ -649,18 +780,25 @@ def ingredient_translator(recipe_info):
                 recipe_info[c1]['ingredients'][c2] = u'cheese'
 
             elif i.lower() in ['evaporated milk', 'whole milk', 'can of evaporated milk', 'fresh milk', 'warm milk',
-                               '2% milk']:
+                               '2% milk', 'full cream milk']:
                 recipe_info[c1]['ingredients'][c2] = u'milk'
+
+            elif i.lower() in ['sour curd', 'hung curd', 'fresh curd']:
+                recipe_info[c1]['ingredients'][c2] = u'curd'
 
             elif i.lower() in ['unsweetened almond milk']:
                 recipe_info[c1]['ingredients'][c2] = u'almond milk'
 
             elif i.lower() in ['heavy whipping cream', 'heavy cream', 'whipped cream', 'whip cream',
-                               'double cream (thick cream)', 'fresh cream (35% milk fat)', 'double cream', ]:
+                               'double cream (thick cream)', 'double cream',
+                               'thickened cream']:
                 recipe_info[c1]['ingredients'][c2] = u'whipping cream'
 
             elif i.lower() in ['sour cream (optional)', 'light sour cream', 'sour cream for garnish']:
                 recipe_info[c1]['ingredients'][c2] = u'sour cream'
+
+            elif i.lower() in ['fresh cream', 'fresh cream (35% milk fat)']:
+                recipe_info[c1]['ingredients'][c2] = u'creme fraiche'
 
             elif i.lower() in ['mayo', 'mayonaise']:
                 recipe_info[c1]['ingredients'][c2] = u'mayonnaise'
@@ -672,7 +810,8 @@ def ingredient_translator(recipe_info):
                                'plain nonfat greek yogurt', 'greek yogurt (plain or vanilla)']:
                 recipe_info[c1]['ingredients'][c2] = u'Greek yogurt'
 
-            elif i.lower() in ['plain yogurt', 'yoghurt', 'nonfat yogurt']:
+            elif i.lower() in ['plain yogurt', 'yoghurt', 'nonfat yogurt', 'plain yoghurt', 'natural yogurt',
+                               'natural yoghurt', 'yogurt, plain']:
                 recipe_info[c1]['ingredients'][c2] = u'yogurt'
 
             elif i.lower() in ['plain vanilla yogurt', 'vanilla yoghurt', 'nonfat vanilla yogurt',
@@ -688,12 +827,20 @@ def ingredient_translator(recipe_info):
                                'skinless boneless chicken breast']:
                 recipe_info[c1]['ingredients'][c2] = u'chicken breast'
 
-            elif i.lower() in ['shredded chicken']:
+            elif i.lower() in ['chicken thighs', 'boneless skinless chicken thighs']:
+                recipe_info[c1]['ingredients'][c2] = u'chicken thigh'
+
+            elif i.lower() in ['shredded chicken', 'diced chicken', 'chicken pieces']:
                 recipe_info[c1]['ingredients'][c2] = u'ground chicken'
 
-            elif i.lower() in ['bacon bits', 'chopped bacon', 'bacon, chopped', 'bacon, diced', 'bacon; small dice',
-                               ]:
+            elif i.lower() in ['of slices chicken', 'whole chicken']:
+                recipe_info[c1]['ingredients'][c2] = u'chicken'
+
+            elif i.lower() in ['bacon bits', 'chopped bacon', 'bacon, chopped', 'bacon, diced', 'bacon; small dice']:
                 recipe_info[c1]['ingredients'][c2] = u'bacon'
+
+            elif i.lower() in ['of slices pork']:
+                recipe_info[c1]['ingredients'][c2] = u'pork'
 
             elif i.lower() in ['hamburger meat', 'hamburger', 'ground beef', 'beef mince', 'lean ground beef',
                                'ground meat', 'ground beef or turkey', 'ground beef', 'ground beef or ground turkey',
@@ -702,6 +849,12 @@ def ingredient_translator(recipe_info):
 
             # FISH
 
+            elif i.lower() in ['shrimp', 'dried shrimp', 'dried shrimps']:
+                recipe_info[c1]['ingredients'][c2] = u'shrimps'
+
+            elif i.lower() in ['salmon fillets']:
+                recipe_info[c1]['ingredients'][c2] = u'salmon'
+
             # NON-INGREDIENTS
 
             elif i.lower() in ['ingredients', 'filling', 'half and half', 'wet ingredients', 'dry ingredients', 'main',
@@ -709,7 +862,8 @@ def ingredient_translator(recipe_info):
                                'toppings', 'optional', 'optional toppings', u'\u25cf for the sides',
                                'for the toppings', 'vegetables', 'sauce', 'veggies', 'frying;', 'garnish option',
                                'vegetable', 'soup', 'sauce (mix well in a bowl);', 'dipping sauce', 'vegetable option',
-                               'meat option', 'seasonings', 'spices', 'stuffing', 'for the sauce:']:
+                               'meat option', 'seasonings', 'spices', 'stuffing', 'for the sauce:', 'garnish',
+                               'topping', 'for tadka', 'tempering', 'for garnishing', 'for tempering']:
                 del recipe_info[c1]['ingredients'][c2]
 
             # OTHER
